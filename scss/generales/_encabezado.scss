@@ -1,0 +1,16 @@
+/* Encabezado visual */
+.rectangulo_encabezado {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to right, var(--color_primario), var(--color_blanco));
+}
+
+.gradiente_encabezado {
+  background-image: linear-gradient(to right, blue, white);
+}
+
+.logo {
+  padding: 10px;
+  max-height: 90%;
+}

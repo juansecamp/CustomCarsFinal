@@ -1,0 +1,68 @@
+/* Ícono hamburguesa */
+.hamburguesa {
+  display: block;
+}
+
+.hamburguesa i {
+  font-size: 40px;
+  color: var(--color_primario);
+}
+
+/* Menú hamburguesa */
+.navbar {
+  position: relative;
+  padding: 10px var(--padding_left_right);
+}
+
+.menu-icon-container {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  text-align: center;
+}
+
+.menu-icon {
+  color: var(--color_primario);
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  right: 20px;
+}
+
+.menu-text {
+  color: var(--color_primario);
+  font-size: 14px;
+  margin-top: 4px;
+  display:block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-image: radial-gradient(var(--color_primario_suave), var(--color_blanco));
+  z-index: 5;
+  display: flex;
+  padding-top: 60px;
+  text-align: center;
+  transition: right 0.3s ease;
+}
+
+.menu li a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+#menu-toggle:checked ~ .menu {
+  right: 0;
+}

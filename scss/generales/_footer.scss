@@ -1,0 +1,44 @@
+/* diseño del footer */
+.footer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color_primario_suave);
+    color: var(--color_fondo);
+    height: 100%;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+/* Diselo Iconos Redes Sociales */
+
+.fa-square-instagram {
+    font-size: 40px;
+    color: brown;
+}
+
+.fa-square-facebook {
+    font-size: 40px;
+    color: blue;
+}
+
+.fa-square-x-twitter {
+    font-size: 40px;
+    color: black;
+}
+
+.fa-square-youtube {
+    font-size: 40px;
+    color: red;
+}
+
+
+/* Responsividad */
+@media (max-width: 1440px) {
+    .footer {
+        font-size: 2vw;
+        padding: 15px;
+    }
+}

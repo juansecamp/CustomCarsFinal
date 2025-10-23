@@ -1,0 +1,421 @@
+@charset "UTF-8";
+/* Variables globales */
+:root {
+  --color_primario: rgb(45, 11, 238);
+  --color_primario_suave: rgb(170, 193, 243);
+  --color_blanco: rgb(255, 255, 255);
+  --color_fondo: rgb(80, 79, 79);
+  --altura_header: 70px;
+  --padding_left_right: 15px;
+  --ancho_maximo: 1440px;
+}
+
+/* Reseteo de los valores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Contenedor general */
+.contenedor {
+  max-width: var(--ancho_maximo);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  color: var(--color_primario);
+  text-decoration: none;
+}
+
+/* Responsividad */
+@media (max-width: 1440px) {
+  .contenedor {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1440px) and (max-width: 760px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 1440px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.card {
+  background: linear-gradient(to right, #add8e6, #ffffff); /* celeste a blanco */
+  border: none; /* opcional: quita el borde si no lo querés */
+}
+
+.zoom-img {
+  transition: transform 0.3s ease;
+}
+
+.zoom-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.sombra-hr {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.custom-corner {
+  border-radius: 20px; /* redondea todas las esquinas */
+  clip-path: polygon(0 0, 80% 0, 100% 30%, 100% 100%, 0 100%);
+}
+
+.texto_h1 {
+  font-family: "impact";
+  text-align: center;
+  color: var(--color_primario);
+}
+
+/* Encabezado visual */
+.rectangulo_encabezado {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to right, var(--color_primario), var(--color_blanco));
+}
+
+.gradiente_encabezado {
+  background-image: linear-gradient(to right, blue, white);
+}
+
+.logo {
+  padding: 10px;
+  max-height: 90%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px var(--padding_left_right);
+  height: var(--altura_header);
+  background-color: var(--color_blanco);
+}
+
+/* Ícono hamburguesa */
+.hamburguesa {
+  display: block;
+}
+
+.hamburguesa i {
+  font-size: 40px;
+  color: var(--color_primario);
+}
+
+/* Menú hamburguesa */
+.navbar {
+  position: relative;
+  padding: 10px var(--padding_left_right);
+}
+
+.menu-icon-container {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  text-align: center;
+}
+
+.menu-icon {
+  color: var(--color_primario);
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  right: 20px;
+}
+
+.menu-text {
+  color: var(--color_primario);
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-image: radial-gradient(var(--color_primario_suave), var(--color_blanco));
+  z-index: 5;
+  display: flex;
+  padding-top: 60px;
+  text-align: center;
+  transition: right 0.3s ease;
+}
+
+.menu li a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+#menu-toggle:checked ~ .menu {
+  right: 0;
+}
+
+/* animacion texto */
+.box {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-bottom: 0.7vw solid var(--color_primario_suave);
+  overflow: hidden;
+  animation: anim 2.5s linear forwards;
+}
+
+.box h1 {
+  font-size: 15vw;
+  color: var(--color_primario);
+}
+
+@keyframes anim {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  30% {
+    width: 25;
+    height: 0;
+  }
+  60% {
+    width: 30vw;
+    height: 5vw;
+  }
+  80% {
+    width: 30vw;
+    height: 5vw;
+  }
+  100% {
+    width: 25vw;
+    height: 5vw;
+  }
+}
+/* diseño del footer */
+.footer {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color_primario_suave);
+  color: var(--color_fondo);
+  height: 100%;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+/* Diselo Iconos Redes Sociales */
+.fa-square-instagram {
+  font-size: 40px;
+  color: brown;
+}
+
+.fa-square-facebook {
+  font-size: 40px;
+  color: blue;
+}
+
+.fa-square-x-twitter {
+  font-size: 40px;
+  color: black;
+}
+
+.fa-square-youtube {
+  font-size: 40px;
+  color: red;
+}
+
+/* Responsividad */
+@media (max-width: 1440px) {
+  .footer {
+    font-size: 2vw;
+    padding: 15px;
+  }
+}
+/* Estilo para imágenes del carrusel */
+.carousel-img {
+  max-width: 25%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto 0 auto;
+  border: 5px solid #ccc; /* borde gris claro de 5px */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra gris suave */
+  border-radius: 8px; /* opcional: bordes redondeados */
+}
+
+@media (max-width: 1440px) {
+  .carousel-img {
+    max-width: 80vw;
+    max-height: 40vh;
+  }
+}
+/* Ofrecimientos */
+.contenedor-ofrecimiento {
+  max-width: var(--ancho_maximo);
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subtitulo {
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+#ofrecimientos {
+  padding: 10px 0;
+}
+
+#ofrecimientos .ofrecimientos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  gap: 10px;
+}
+
+#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos {
+  width: 47%;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos div:first-child img {
+  width: 120px;
+  border-radius: 20% 0 20% 0;
+}
+
+/* tarjetas superiores */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 20px;
+  text-align: center;
+}
+
+.caja {
+  background-image: linear-gradient(var(--color_primario_suave), var(--color_blanco));
+  padding: 20px;
+  border-radius: 20px;
+  border-color: lightgray;
+  border-style: double;
+}
+
+/* Formulario de contacto */
+.form-container {
+  background: #fff;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 4rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--color_primario);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--color_primario);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--color_primario_suave);
+  color: var(--color_blanco);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background: var(--color_primario);
+}
+
+/*# sourceMappingURL=style.css.map */

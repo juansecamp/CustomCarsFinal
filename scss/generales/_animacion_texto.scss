@@ -1,0 +1,43 @@
+/* animacion texto */
+.box {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-bottom: .7vw solid var(--color_primario_suave);
+    overflow: hidden;
+    animation: anim 2.5s linear forwards;
+}
+
+.box h1 {
+    font-size: 15vw;
+    color: var(--color_primario);
+}
+
+@keyframes anim {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    30% {
+        width: 25;
+        height: 0;
+    }
+
+    60% {
+        width: 30vw;
+        height: 5vw;
+    }
+
+    80% {
+        width: 30vw;
+        height: 5vw;
+    }
+
+    100% {
+        width: 25vw;
+        height: 5vw;
+    }
+}

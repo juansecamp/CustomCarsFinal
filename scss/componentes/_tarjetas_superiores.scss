@@ -1,0 +1,18 @@
+/* tarjetas superiores */
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 20px;
+    text-align: center;
+}
+
+.caja {
+    background-image: linear-gradient(var(--color_primario_suave), var(--color_blanco));
+    padding: 20px;
+    border-radius: 20px;
+    border-color: lightgray;
+    border-style: double;
+}

@@ -1,0 +1,21 @@
+/* Estilo para imágenes del carrusel */
+.carousel-img {
+    max-width: 25%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto 0 auto;
+
+  border: 5px solid #ccc; /* borde gris claro de 5px */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra gris suave */
+  border-radius: 8px; /* opcional: bordes redondeados */
+
+}
+
+
+@media (max-width: 1440px) {
+    .carousel-img {
+        max-width: 80vw;
+        max-height: 40vh;
+    }
+}

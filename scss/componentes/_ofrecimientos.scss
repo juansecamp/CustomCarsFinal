@@ -1,0 +1,43 @@
+/* Ofrecimientos */
+
+.contenedor-ofrecimiento {
+    max-width: var(--ancho_maximo);
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subtitulo {
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+#ofrecimientos {
+    padding: 10px 0;
+}
+
+#ofrecimientos .ofrecimientos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    gap: 10px
+}
+
+#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos {
+    width: 47%;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos div:first-child img {
+    width: 120px;
+    border-radius: 20% 0 20% 0;
+}
