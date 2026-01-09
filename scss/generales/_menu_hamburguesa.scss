@@ -1,0 +1,50 @@
+@use "generales" as g;
+
+.navbar-toggler {
+    border: 2px solid g.$color-principal;
+    padding: 0.5rem;
+    transition: g.$transicion;
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(g.$color-principal, 0.25); 
+        outline: none;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='#{g.$color-principal}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    &:hover {
+        background-color: rgba(g.$color-principal, 0.1);
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: g.$color-oscuro;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 10px;
+        animation: fadeInMenu 0.4s ease; 
+
+        .nav-link {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

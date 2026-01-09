@@ -1,44 +1,45 @@
-/* diseño del footer */
-.footer {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color_primario_suave);
-    color: var(--color_fondo);
-    height: 100%;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 1rem;
-}
+@use "generales" as g;
 
-/* Diselo Iconos Redes Sociales */
+footer {
+    background-color: g.$color-oscuro;
+    color: g.$color-blanco;
+    padding: 3rem 0 1rem;
 
-.fa-square-instagram {
-    font-size: 40px;
-    color: brown;
-}
+    h5 {
+        color: g.$color-principal;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        position: relative;
+        
+        &::after { 
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: g.$color-principal;
+            margin-top: 0.5rem;
+        }
+    }
 
-.fa-square-facebook {
-    font-size: 40px;
-    color: blue;
-}
+    p {
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
 
-.fa-square-x-twitter {
-    font-size: 40px;
-    color: black;
-}
+    .fas, .fab {
+        color: g.$color-principal;
+        transition: transform 0.3s ease;
 
-.fa-square-youtube {
-    font-size: 40px;
-    color: red;
-}
+        &:hover {
+            transform: scale(1.2);
+            color: g.$color-blanco;
+        }
+    }
 
-
-/* Responsividad */
-@media (max-width: 1440px) {
-    .footer {
-        font-size: 2vw;
-        padding: 15px;
+    .list-inline {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
     }
 }
