@@ -1,43 +1,24 @@
-/* Ofrecimientos */
-
-.contenedor-ofrecimiento {
-    max-width: var(--ancho_maximo);
-    margin: 0 auto 0 auto;
-    overflow: hidden;
-    padding: 0 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.subtitulo {
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-top: 13px;
-    margin-left: 10px;
-}
-
 #ofrecimientos {
-    padding: 10px 0;
-}
+    padding: 50px 0;
 
-#ofrecimientos .ofrecimientos {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 5px;
-    gap: 10px
-}
+    .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
 
-#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos {
-    width: 47%;
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    gap: 10px;
-}
+    .card {
+        transition: transform 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-#ofrecimientos .ofrecimientos .tarjeta-ofrecimientos div:first-child img {
-    width: 120px;
-    border-radius: 20% 0 20% 0;
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            color: $color-principal;
+            font-weight: bold;
+        }
+    }
 }

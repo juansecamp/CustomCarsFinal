@@ -1,11 +1,4 @@
 @use "generales/generales";
-@use "generales/encabezado";
-@use "generales/header";
-@use "generales/Menu_Hamburguesa";
-@use "generales/animacion_texto";
-@use "generales/footer";
-@use "generales/carrousel";
-
-@use "componentes/ofrecimientos";
-@use "componentes/tarjetas_superiores";
+@use "generales/ofrecimientos";
 @use "componentes/formulario_contacto";
+@use "componentes/animacion_textos";
